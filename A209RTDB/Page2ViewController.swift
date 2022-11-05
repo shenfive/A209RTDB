@@ -27,7 +27,8 @@ class Page2ViewController: UIViewController {
             
             for item in snapshot.children{
                 let s1 = item as! DataSnapshot
-                let fitem = ["subject":s1.childSnapshot(forPath: "t").value as! String,"key":s1.key]
+                let fitem = ["subject":s1.childSnapshot(forPath: "t").value as! String,
+                             "key":s1.key]
                 self.flist.append(fitem)
                 
             }
