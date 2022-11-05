@@ -28,7 +28,6 @@ class Page2ViewController: UIViewController {
             for item in snapshot.children{
                 let s1 = item as! DataSnapshot
                 let fitem = ["subject":s1.childSnapshot(forPath: "t").value as! String,"key":s1.key]
-                
                 self.flist.append(fitem)
                 
             }
@@ -37,6 +36,23 @@ class Page2ViewController: UIViewController {
             self.theTableView.reloadData()
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "goPage3":
+            let nexeVC = segue.destination as? Page3ViewController
+            nexeVC?.nickname = nickName
+            if let indexPath = theTableView.indexPathForSelectedRow{
+                nexeVC?.subject = flist[indexPath.row]
+            }
+        default:
+            break
+        }
+    }
+    
+    
+    
+    
 }
 
 extension Page2ViewController: UITableViewDelegate,UITableViewDataSource{
@@ -53,6 +69,10 @@ extension Page2ViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(flist[indexPath.row])
         print(nickName)
+        
+        performSegue(withIdentifier: "goPage3", sender: nil)
+        
+        
     }
     
     

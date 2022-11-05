@@ -116,11 +116,28 @@
                     <navigationItem key="navigationItem" id="GEy-Mc-WR0"/>
                     <connections>
                         <outlet property="theTableView" destination="3Vg-wT-Sy2" id="HPs-Nk-GNV"/>
+                        <segue destination="tQD-E0-dA2" kind="show" identifier="goPage3" id="byf-Di-5Ut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbO-mU-Xib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1925.9541984732823" y="-27.464788732394368"/>
+        </scene>
+        <!--Page3 View Controller-->
+        <scene sceneID="8hU-HS-Yj6">
+            <objects>
+                <viewController id="tQD-E0-dA2" customClass="Page3ViewController" customModule="A209RTDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ii-SW-E1m">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qhI-xB-0kO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hq7-Sl-kG2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NRq-GE-jP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2862" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yn0-za-wlW">

@@ -20,6 +20,7 @@
 		BA9A1B86291609F1004EBD72 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9A1B85291609F1004EBD72 /* Config.swift */; };
 		BA9A1B8829162BD3004EBD72 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9A1B8729162BD3004EBD72 /* Page2ViewController.swift */; };
 		BA9A1B8A2916316F004EBD72 /* FListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9A1B892916316F004EBD72 /* FListTableViewCell.swift */; };
+		BA9A1B8C29164338004EBD72 /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9A1B8B29164338004EBD72 /* Page3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		BA9A1B85291609F1004EBD72 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		BA9A1B8729162BD3004EBD72 /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
 		BA9A1B892916316F004EBD72 /* FListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FListTableViewCell.swift; sourceTree = "<group>"; };
+		BA9A1B8B29164338004EBD72 /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				BA9A1B85291609F1004EBD72 /* Config.swift */,
 				BA9A1B8729162BD3004EBD72 /* Page2ViewController.swift */,
 				BA9A1B892916316F004EBD72 /* FListTableViewCell.swift */,
+				BA9A1B8B29164338004EBD72 /* Page3ViewController.swift */,
 			);
 			path = A209RTDB;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				BA9A1B86291609F1004EBD72 /* Config.swift in Sources */,
 				BA9A1B692915F96D004EBD72 /* AppDelegate.swift in Sources */,
 				BA9A1B6B2915F96D004EBD72 /* SceneDelegate.swift in Sources */,
+				BA9A1B8C29164338004EBD72 /* Page3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

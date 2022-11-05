@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         Auth.auth().signInAnonymously()
         Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user{//己登入
+            if user != nil{//己登入
                 self.status.text = "可進入"
             }else{//未登入
                 self.status.text = "準備中..."
