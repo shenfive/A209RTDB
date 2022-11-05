@@ -73,13 +73,33 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OcD-rq-83b">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="flistcell" rowHeight="238" id="OcD-rq-83b" customClass="FListTableViewCell" customModule="A209RTDB" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="238"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OcD-rq-83b" id="0W8-jk-y8L">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="238"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwC-67-A1B">
+                                                    <rect key="frame" x="20" y="11" width="353" height="177"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="MDK-nt-82F"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BwC-67-A1B" firstAttribute="top" secondItem="0W8-jk-y8L" secondAttribute="top" constant="11" id="0P9-1v-u20"/>
+                                                <constraint firstAttribute="bottom" secondItem="BwC-67-A1B" secondAttribute="bottom" constant="50" id="a3b-t0-GJn"/>
+                                                <constraint firstAttribute="trailing" secondItem="BwC-67-A1B" secondAttribute="trailing" constant="20" id="m4P-B8-cEB"/>
+                                                <constraint firstItem="BwC-67-A1B" firstAttribute="leading" secondItem="0W8-jk-y8L" secondAttribute="leading" constant="20" id="n5T-7S-ff5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="BwC-67-A1B" id="XMq-mb-hb1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -100,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QbO-mU-Xib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="-27"/>
+            <point key="canvasLocation" x="1925.9541984732823" y="-27.464788732394368"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yn0-za-wlW">

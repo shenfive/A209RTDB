@@ -25,9 +25,7 @@ extension Page2ViewController: UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
-        cell.backgroundColor = UIColor.yellow
+        let cell = tableView.dequeueReusableCell(withIdentifier: "flistcell", for: indexPath) as! FListTableViewCell
         
         return cell
     }
