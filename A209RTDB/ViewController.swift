@@ -6,12 +6,22 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    var ref:DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Auth.auth().signInAnonymously()
+        
+        ref = Database.database().reference().child("app1")
+
+        ref.child("name").setValue("Danny")
+        
+        
+        
     }
 
 
