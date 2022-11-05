@@ -13,7 +13,7 @@ class Page2ViewController: UIViewController {
     @IBOutlet weak var theTableView: UITableView!
     
     var flist:[[String:String]] = []
-    
+    var nickName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +23,17 @@ class Page2ViewController: UIViewController {
         theTableView.dataSource = self
         
         ref.child("sub").observeSingleEvent(of: .value) { snapshot in
-            print(snapshot)
+            
+            
             for item in snapshot.children{
                 let s1 = item as! DataSnapshot
-                let fitem = ["subject":s1.childSnapshot(forPath: "t").value as! String]
+                let fitem = ["subject":s1.childSnapshot(forPath: "t").value as! String,"key":s1.key]
+                
                 self.flist.append(fitem)
                 
             }
-            print(self.flist.count)
+            print(self.flist)
+            
             self.theTableView.reloadData()
         }
     }
@@ -45,6 +48,11 @@ extension Page2ViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "flistcell", for: indexPath) as! FListTableViewCell
         cell.name.text = flist[indexPath.row]["subject"]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(flist[indexPath.row])
+        print(nickName)
     }
     
     

@@ -11,6 +11,10 @@ import Firebase
 class ViewController: UIViewController {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var nickname: UITextField!
+    
+    var name = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth.auth().signInAnonymously()
@@ -22,8 +26,21 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier{
+        case "goPage2":
+            let nexeVC = segue.destination as? Page2ViewController
+            nexeVC?.nickName = name
+        default:
+            break
+        }
+    }
+    
+    
+    
     @IBAction func goNextPage(_ sender: Any) {
-        let name = nickname.text ?? ""
+        name = nickname.text ?? ""
         if name.count < 2 {
             showMessage("匿稱至少兩個字元")
             return
