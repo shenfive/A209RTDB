@@ -185,6 +185,7 @@
                     <navigationItem key="navigationItem" id="Hq7-Sl-kG2"/>
                     <connections>
                         <outlet property="inputText" destination="kGA-7s-bVR" id="tW5-Ck-G4p"/>
+                        <outlet property="theTableview" destination="Azy-dl-dSK" id="qrb-cl-cHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRq-GE-jP3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
