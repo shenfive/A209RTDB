@@ -9,20 +9,37 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-    @IBOutlet weak var display: UILabel!
+
+    @IBOutlet weak var status: UILabel!
     
+    @IBOutlet weak var nickname: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth.auth().signInAnonymously()
-        ref.child("appname").observe(.value) { snapshot in
-            if let name = snapshot.value as? String{
-                self.display.text = name
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user{
+                //己登入
+                self.status.text = "可進入"
+            }else{
+                //未登入
+                self.status.text = "準備中..."
             }
         }
-      
+        
+        
+        
+
+    }
+    
+    @IBAction func goNextPage(_ sender: Any) {
+        let name = nickname.text ?? ""
+        if name.count < 2 {
+            print("no Go")
+            return
+        }
+        print("Go")
         
     }
-
-
+    
 }
 
