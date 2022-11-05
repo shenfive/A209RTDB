@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBAction func goNextPage(_ sender: Any) {
         let name = nickname.text ?? ""
         if name.count < 2 {
-            print("no Go")
+            showMessage("匿稱至少兩個字元")
             return
         }
         self.performSegue(withIdentifier: "goPage2", sender: self)
