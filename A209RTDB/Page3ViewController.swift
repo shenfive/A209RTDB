@@ -29,6 +29,7 @@ class Page3ViewController: UIViewController {
         let key = subject["key"] ?? ""
         
         ref.child("d").child(key).observe(.value) { snapshot in
+            self.list.removeAll()
             for item in snapshot.children{
                 let s1 = item as! DataSnapshot
                 print(s1)
@@ -41,6 +42,7 @@ class Page3ViewController: UIViewController {
             }
             print(self.list)
             print(self.list.count)
+            self.theTableview.reloadData()
             print()
         
             
@@ -80,11 +82,15 @@ class Page3ViewController: UIViewController {
 
 extension Page3ViewController:UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "p3cell", for: indexPath) as! P3TableViewCell
+        cell.content.text = list[indexPath.row]["content"] as? String
+        cell.name.text = "匿稱：\(list[indexPath.row]["name"] as? String ?? "")"
+        
+        return cell
     }
     
     
