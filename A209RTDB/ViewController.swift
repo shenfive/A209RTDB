@@ -9,14 +9,17 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var display: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth.auth().signInAnonymously()
-
-        var someOne = ["name":"Danny","age":20] as [String : Any]
-        
-        ref.child("members").childByAutoId().setValue(someOne)
+        ref.child("appname").observe(.value) { snapshot in
+            if let name = snapshot.value as? String{
+                self.display.text = name
+            }
+        }
+      
         
     }
 
