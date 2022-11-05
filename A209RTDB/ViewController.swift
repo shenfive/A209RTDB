@@ -10,38 +10,13 @@ import Firebase
 
 class ViewController: UIViewController {
 
-    var ref:DatabaseReference!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth.auth().signInAnonymously()
-        
-        ref = Database.database().reference().child("app1")
 
-        ref.child("time").setValue(ServerValue.timestamp())
+        var someOne = ["name":"Danny","age":20] as [String : Any]
         
-        ref.child("name").child("0").observeSingleEvent(of: .value) { snapshot in
-            if let x = snapshot.value as? String{
-                print(x)
-            }
-        }
-        
-        ref.child("time").observeSingleEvent(of: .value) { snapshot in
-            if let x = snapshot.value as? Double{
-                var time = x / 1000
-                var theTime = Date(timeIntervalSince1970: time)
-                
-                print("======\(theTime)==")
-                
-                
-                
-                
-                
-            }
-        }
-
-        
-        
+        ref.child("members").childByAutoId().setValue(someOne)
         
     }
 
