@@ -11,18 +11,31 @@ class Page3ViewController: UIViewController {
 
     var subject:[String:String] = [:]
     var nickname = ""
+    @IBOutlet weak var inputText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print(subject)
         print(nickname)
-        print()
+        
+        self.title = subject["subject"]
+
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+
+    @IBAction func newMessage(_ sender: Any) {
+        let input = inputText.text ?? ""
+        
+        if input.count < 3 {
+            print("太少")
+            return
+        }
+        
+        
+        
+        
         
     }
-
+    
 }
