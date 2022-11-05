@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Page3ViewController: UIViewController {
 
@@ -32,6 +33,14 @@ class Page3ViewController: UIViewController {
             return
         }
         
+        let fitem = ["n":nickname,"c":input,"t":ServerValue.timestamp()] as [String : Any]
+        ref.child("d").child(subject["key"] ?? "").childByAutoId().setValue(fitem) {error, reference in
+            if let error = error{
+                self.showMessage(error.localizedDescription)
+                return
+            }
+            self.inputText.text = ""
+        }
         
         
         
