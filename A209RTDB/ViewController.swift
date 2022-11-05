@@ -18,7 +18,28 @@ class ViewController: UIViewController {
         
         ref = Database.database().reference().child("app1")
 
-        ref.child("name").setValue("Danny")
+        ref.child("time").setValue(ServerValue.timestamp())
+        
+        ref.child("name").child("0").observeSingleEvent(of: .value) { snapshot in
+            if let x = snapshot.value as? String{
+                print(x)
+            }
+        }
+        
+        ref.child("time").observeSingleEvent(of: .value) { snapshot in
+            if let x = snapshot.value as? Double{
+                var time = x / 1000
+                var theTime = Date(timeIntervalSince1970: time)
+                
+                print("======\(theTime)==")
+                
+                
+                
+                
+                
+            }
+        }
+
         
         
         
