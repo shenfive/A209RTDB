@@ -9,28 +9,19 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
-
     @IBOutlet weak var status: UILabel!
-    
     @IBOutlet weak var nickname: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         Auth.auth().signInAnonymously()
         Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user{
-                //己登入
+            if let user = user{//己登入
                 self.status.text = "可進入"
-            }else{
-                //未登入
+            }else{//未登入
                 self.status.text = "準備中..."
             }
         }
-        
-        
-        
-
     }
-    
     @IBAction func goNextPage(_ sender: Any) {
         let name = nickname.text ?? ""
         if name.count < 2 {
@@ -38,8 +29,6 @@ class ViewController: UIViewController {
             return
         }
         print("Go")
-        
     }
-    
 }
 
