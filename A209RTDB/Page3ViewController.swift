@@ -28,7 +28,7 @@ class Page3ViewController: UIViewController {
         let input = inputText.text ?? ""
         
         if input.count < 3 {
-            print("太少")
+            showMessage("請輸入至少三個字元")
             return
         }
         
