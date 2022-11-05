@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             print("no Go")
             return
         }
-        print("Go")
+        self.performSegue(withIdentifier: "goPage2", sender: self)
     }
 }
 
